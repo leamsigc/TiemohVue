@@ -1,32 +1,73 @@
+<script lang="ts">
+/**
+ * This is the amin entry for the aplication
+ *
+ * @author  ismael garcia  <reflect.media GmbH>
+ * @version 0.0.1
+ *
+ * @todo [ ] Test the component
+ * @todo [ ] Integration test.
+ * @todo [✔] Update the typescript.
+ */
+import { Vue, Component } from "vue-property-decorator";
+import NavBar from "@/components/NavBar.vue";
+// import { mapGetters, mapActions } from "vuex";
+
+@Component({
+  name: "App",
+  components: {
+    NavBar
+  }
+})
+export default class App extends Vue {
+  /******Props *****/
+  /******Vuex *****/
+  /******localState *****/
+  /*****  HelperFunction ******/
+  /*****  Methods ******/
+}
+</script>
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <NavBar />
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+:root {
+  --primary-color: #49059f;
+  --main-white-bg: #fff;
+  --white-color: #e5e5e5;
+  --muted-text: #b8b8b8;
+  --dark-color: #140b1f;
+  --text-color: #3d3d3d;
+
+  // main font
+  --main-font: "Montserrat", sans-serif;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+* {
+  display: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: var(--main-font);
+  background: var(--main-white-bg);
+}
+#app {
+  position: relative;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.text-muted {
+  color: var(--muted-text);
+}
+.text-focus {
+  color: var(--primary-color);
+  font-weight: 900;
 }
 </style>

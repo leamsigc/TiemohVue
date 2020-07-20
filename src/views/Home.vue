@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Hero />
   </div>
 </template>
-
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
-export default {
+<script lang="ts">
+/**
+ * HOME view and all related components
+ *
+ * @author  ismael garcia  <reflect.media GmbH>
+ * @version 0.0.1
+ *
+ * @todo [ ] Test the component
+ * @todo [ ] Integration test.
+ * @todo [✔] Update the typescript.
+ */
+import { Vue, Component } from "vue-property-decorator";
+// import { mapGetters, mapActions } from "vuex";
+import Hero from "@/components/Hero.vue";
+@Component({
   name: "Home",
   components: {
-    HelloWorld
+    Hero
   }
-};
+})
+export default class Home extends Vue {
+  /******Props *****/
+  /******Vuex *****/
+  /******localState *****/
+  /*****  HelperFunction ******/
+  /*****  Methods ******/
+}
 </script>
+<style lang="scss" scoped></style>
